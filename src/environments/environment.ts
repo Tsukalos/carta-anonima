@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCKT5u1Ltje6rltTglKFLhGk1biuQrUTzY",
+    authDomain: "carta-anonima.firebaseapp.com",
+    databaseURL: "https://carta-anonima.firebaseio.com",
+    projectId: "carta-anonima",
+    storageBucket: "carta-anonima.appspot.com",
+    messagingSenderId: "383500104291"
+  }
 };
 
 /*
