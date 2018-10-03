@@ -1,5 +1,7 @@
 <div *ngFor="let item of items | async">
-    <p>{{ item.date.toDate() | date: 'dd/MM/yyyy hh:mm' }}</p>
-    
     <p>{{ item.id }}</p>
+    <p>{{ item.date.toDate() | date: 'dd/MM/yyyy hh:mm' }}</p>
+    <p>{{ item.title }}</p>
+    <p>{{ item.author }}</p>
+    <p>{{ item.text }}</p>
 </div>
