@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+import { Post } from '../PostClass';
 
 @Component({
   selector: 'app-post-list',
@@ -6,8 +9,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-
-  constructor() { }
+  items: Observable<any[]>;
+  constructor(db: AngularFirestore) {
+  }
 
   ngOnInit() {
   }
