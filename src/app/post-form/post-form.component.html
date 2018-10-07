@@ -1,0 +1,13 @@
+<div>
+  Autor<input type="text" [(ngModel)]="fields.author">
+</div>
+<div>
+  Título<input [(ngModel)]="fields.title">
+</div>
+<div>
+  Texto<textarea [(ngModel)]="fields.text"></textarea>
+</div>
+<div>
+  <button [disabled]="!enableButton()" (click)="send()">Enviar</button>
+</div>
+

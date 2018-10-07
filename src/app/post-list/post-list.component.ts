@@ -26,8 +26,7 @@ export class PostListComponent implements OnInit {
         const data = a.payload.doc.data() as Post;
         const id = a.payload.doc.id;
         return {id, ...data};
-      }))
-    );
+    })));
   }
 
 
