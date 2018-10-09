@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { PostServiceService } from '../post-service.service';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -17,8 +16,8 @@ export interface Post {
 export class PostViewComponent implements OnInit {
   info: Observable<Post>;
   collection: AngularFirestoreCollection<Post>;
-  constructor(private postService: PostServiceService, private route: ActivatedRoute, db: AngularFirestore) {
-    this.collection = db.collection<Post>("posts");
+  constructor(private route: ActivatedRoute, db: AngularFirestore) {
+    this.collection = db.collection<Post>('posts');
 
   }
 
@@ -26,7 +25,7 @@ export class PostViewComponent implements OnInit {
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
-    this.info = this.collection.doc<Post>("/"+id).valueChanges();
+    this.info = this.collection.doc<Post>('/' + id).valueChanges();
   }
 
 }

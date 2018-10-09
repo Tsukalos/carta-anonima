@@ -21,7 +21,7 @@ export class PostListComponent implements OnInit {
   private itemsCollection: AngularFirestoreCollection<Post>;
   items: Observable<Post[]>;
   constructor(db: AngularFirestore) {
-    this.itemsCollection = db.collection<Post>('posts');
+    this.itemsCollection = db.collection<Post>('posts', ref => ref.orderBy('date', 'desc'));
     this.items = this.itemsCollection.snapshotChanges().pipe(map(actions => actions.map(a => {
         const data = a.payload.doc.data() as Post;
         const id = a.payload.doc.id;
