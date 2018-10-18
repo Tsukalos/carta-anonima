@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { PostServiceService } from '../post-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
@@ -17,7 +16,7 @@ export interface Post {
 export class PostViewComponent implements OnInit {
   info: Observable<Post>;
   collection: AngularFirestoreCollection<Post>;
-  constructor(private postService: PostServiceService, private route: ActivatedRoute, db: AngularFirestore) {
+  constructor(private route: ActivatedRoute, db: AngularFirestore) {
     this.collection = db.collection<Post>("posts");
 
   }

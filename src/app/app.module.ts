@@ -11,6 +11,8 @@ import { PostListComponent } from './post-list/post-list.component';
 import { PostFormComponent } from './post-form/post-form.component';
 import { FormsModule } from '@angular/forms';
 import { PostViewComponent } from './post-view/post-view.component';
+import { ScrollableDirective } from './scrollable.directive';
+import { PaginationService } from './pagination.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { PostViewComponent } from './post-view/post-view.component';
     HomeComponent,
     PostListComponent,
     PostFormComponent,
-    PostViewComponent
+    PostViewComponent,
+    ScrollableDirective
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,7 @@ import { PostViewComponent } from './post-view/post-view.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [PaginationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

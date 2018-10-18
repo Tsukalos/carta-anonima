@@ -1,14 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-export interface Post {
-  id: string;
-  author: string;
-  text: string;
-  date: firebase.firestore.Timestamp;
-  title: string;
-}
+import { PaginationService } from '../pagination.service'
+
 @Component({
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
@@ -18,19 +10,20 @@ export interface Post {
 
 
 export class PostListComponent implements OnInit {
-  private itemsCollection: AngularFirestoreCollection<Post>;
-  items: Observable<Post[]>;
-  constructor(db: AngularFirestore) {
-    this.itemsCollection = db.collection<Post>('posts');
-    this.items = this.itemsCollection.snapshotChanges().pipe(map(actions => actions.map(a => {
-        const data = a.payload.doc.data() as Post;
-        const id = a.payload.doc.id;
-        return {id, ...data};
-    })));
+  constructor(public page: PaginationService) {
+
   }
 
 
   ngOnInit() {
+    this.page.init('posts', 'date', { reverse: true, prepend: false})
+  }
+
+  scrollHandler(e) {
+    console.log(e);
+    if (e === 'bottom') {
+      this.page.more()
+    }
   }
 
 }
