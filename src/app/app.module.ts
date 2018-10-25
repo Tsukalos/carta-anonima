@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { PostViewComponent } from './post-view/post-view.component';
 import { ScrollableDirective } from './scrollable.directive';
 import { PaginationService } from './pagination.service';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PaginationService } from './pagination.service';
   ],
   imports: [
     BrowserModule,
+    CollapseModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
@@ -35,3 +37,4 @@ import { PaginationService } from './pagination.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class AppBootstrapModule {}
