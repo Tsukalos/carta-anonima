@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PaginationService } from '../pagination.service'
+import { PaginationService } from '../pagination.service';
 
 @Component({
   selector: 'app-post-list',
@@ -16,13 +16,13 @@ export class PostListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.page.init('posts', 'date', { reverse: true, prepend: false})
+    this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 10});
   }
 
   scrollHandler(e) {
     console.log(e);
     if (e === 'bottom') {
-      this.page.more()
+      this.page.more();
     }
   }
 

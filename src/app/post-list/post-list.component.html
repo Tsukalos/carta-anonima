@@ -1,10 +1,33 @@
+<!-- Conteúdo Relatos -->
+<section id="primeiro_conteudo">
 
-<div style="overflow-y:scroll; height: 200px;" appScrollable (scrollPosition)="scrollHandler($event)">
-<div *ngFor="let item of page.data | async">
-    <p>{{ item.id }}</p>
-    <p>{{ item.date.toDate() | date: 'dd/MM/yyyy hh:mm' }}</p>
-    <p>{{ item.title }}</p>
-    <p>{{ item.author }}</p>
-    <p>{{ item.text }}</p>
-    <p><a routerLink="/r/{{ item.id }}">Link para o Post</a></p>
-</div></div>
+  <div class="container" style="overflow-y:scroll; height: 100%" appScrollable (scrollPosition)="scrollHandler($event)">
+
+      <div *ngFor="let item of page.data | async" class="relato col-sm-5 col-sm-offset-1">
+
+        <a routerLink="/r/{{ item.id }}">
+
+          <span id="titulo-relato">
+            <h3><b>{{ item.title }}</b></h3>
+          </span>
+
+          <span id="relato-demo" class="justif">
+          <p>
+            {{ item.text }}
+            <br><b>Leia mais...</b>
+          </p>
+          </span>
+
+
+          <!--
+            <span id="autor-relato">Autor Anônimo</span>
+          -->
+
+        </a>
+
+      </div>
+
+
+  </div> <!--/container primeiro conteudo-->
+
+</section>
