@@ -41,6 +41,7 @@ export class PaginationService {
       prepend: false,
       ...opts
     }
+    this._data = new BehaviorSubject([]);
 
     const first = this.afs.collection(this.query.path, ref => {
       return ref
@@ -85,7 +86,7 @@ export class PaginationService {
   // Maps the snapshot to usable format the updates source
   private mapAndUpdate(col: AngularFirestoreCollection<any>) {
 
-    if (this._done.value || this._loading.value) { return };
+    if (this._done.value || this._loading.value) { }
 
     // loading
     this._loading.next(true)
@@ -112,8 +113,8 @@ export class PaginationService {
           this._done.next(true)
         }
     })
-    ,take(1))
-    .subscribe()
+    )
+    .subscribe();
 
   }
 
