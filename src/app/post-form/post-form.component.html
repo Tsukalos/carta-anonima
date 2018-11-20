@@ -37,7 +37,7 @@
           </label>
 
           <div class="col-md-7">
-            <input [(ngModel)]="fields.title" type="text" class="form-control" id="input-titulo">
+            <input [(ngModel)]="fields.title" type="text" class="form-control" id="input-titulo" name="title">
           </div>
 
         </div> <!--/form-group titulo-->
@@ -49,7 +49,7 @@
           </label>
 
           <div class="col-md-7">
-            <input [(ngModel)]="fields.author" type="text" class="form-control" id="input-nome">
+            <input [(ngModel)]="fields.author" type="text" class="form-control" id="input-nome" name="author">
           </div>
 
         </div> <!--/form-group nome-->
@@ -61,7 +61,7 @@
           </label>
 
           <div class="col-md-7">
-            <textarea [(ngModel)]="fields.text" class="form-control" rows="8" id="input-relato"></textarea>
+            <textarea [(ngModel)]="fields.text" class="form-control" rows="8" id="input-relato" name="text"></textarea>
           </div>
 
         </div> <!--/form-group relato-->
@@ -69,7 +69,9 @@
         <div class="form-group">
 
           <div class="col-md-offset-10 visible-md-block visible-lg-block">
-            <button type="submit" id="botao-enviar">Enviar</button>
+              <button type="submit" id="botao-enviar" [disabled]="!enableButton()" (click)="send()">
+                Enviar
+              </button>
           </div>
 
           <div class="pull-right visible-sm-block visible-xs-block col-md-10">
