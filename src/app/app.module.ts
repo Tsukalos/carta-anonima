@@ -14,6 +14,8 @@ import { PostViewComponent } from './post-view/post-view.component';
 import { ScrollableDirective } from './scrollable.directive';
 import { PaginationService } from './pagination.service';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { PrivacidadeComponent } from './privacidade/privacidade.component';
+import { InformacaoComponent } from './informacao/informacao.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     PostListComponent,
     PostFormComponent,
     PostViewComponent,
-    ScrollableDirective
+    ScrollableDirective,
+    PrivacidadeComponent,
+    InformacaoComponent
   ],
   imports: [
     BrowserModule,
