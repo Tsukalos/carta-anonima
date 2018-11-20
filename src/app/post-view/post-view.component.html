@@ -1,4 +1,35 @@
-<p>{{ (info | async)?.date.toDate() | date: 'dd/MM/yyyy hh:mm' }}</p>
-<p>{{ (info | async)?.title }}</p>
-<p>{{ (info | async)?.author }}</p>
-<p>{{ (info | async)?.text }}</p>
+<!-- Conteúdo Info -->
+<section id="primeiro_conteudo">
+  <div class="container">
+
+    <div class="row">
+
+      <div class="relato col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+
+        <span id="titulo-relato">
+          <h3><b>{{ (info | async)?.title }}</b></h3>
+        </span>
+
+        <span id="texto-relato" class="justif">
+          <p>{{ (info | async)?.text }}</p>
+        </span>
+
+        <span id="autor-relato">{{ (info | async)?.author }}</span>
+
+      </div>
+
+    </div><!--/row x -->
+
+    <div class="row">
+
+      <div class="col-sm-offset-2 col-sm-8 col-xs-10 col-xs-offset-1">
+        <span id="denuncia">
+          <a href="#"><b>Denuncie esse post</b></a>
+        </span>
+      </div>
+
+    </div><!--/row x -->
+
+  </div> <!--/container primeiro conteudo-->
+
+</section>
