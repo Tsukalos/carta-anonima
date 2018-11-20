@@ -13,7 +13,7 @@
 
           <span id="relato-demo" class="justif">
           <p>
-            {{ item.text }}
+            {{ (item.text.length>30)? (item.text | slice:0:30)+'...':(item.text) }}
             <br><b>Leia mais...</b>
           </p>
           </span>

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
 export interface Post {
   author: string;
   text: string;
@@ -33,7 +33,8 @@ export class PostViewComponent implements OnInit {
 
   reportButton(): void {
     const d = this.collection.doc<Post>('/' + this.currentId).snapshotChanges().pipe(map(arr => {
-    })).subscribe();
+      this.collection.doc<Post>('/' + this.currentId).update({ reports: arr.payload.data().reports + 1 });
+    }), take(1)).toPromise();
   }
 
 }
