@@ -30,9 +30,9 @@ body
 .img-logo
 {
 	height: 60px;
-	width: 60px; 
+	width: 60px;
 	display: block;
-	background: url('/src/img/favicon.png') no-repeat; 
+	background: url('/src/img/favicon.png') no-repeat;
 	background-size: contain;
 	color: transparent;
 }
@@ -60,7 +60,7 @@ body
 
 /* == Primeiro conteúdo == */
 
-/* Distanciamento da navbar do primeiro conteudo: 
+/* Distanciamento da navbar do primeiro conteudo:
  * Obs: não da pra usar na body pq senão desce o background.
  * Obs2: utilizei a seção primeiro conteúdo em caso de navegação por scroll
  */
@@ -68,7 +68,7 @@ body
 {
 	padding: 135px 0 30px 0;
 }
- 
+
 /* == HOME == */
 
 /* Imagem da home */
@@ -121,7 +121,7 @@ body
 	color: #f0deb9;
 	font-weight: bold;
 	border-radius: 8px;		/*Bordas arredondadas:*/
-	-webkit-border-radius:8px;	/*Para funcionar em versões anteriores do chrome e safari: */	
+	-webkit-border-radius:8px;	/*Para funcionar em versões anteriores do chrome e safari: */
 	-moz-border-radius:8	px; 	/*Para funcionar em versões anteriores do mozilla: */
 	/*Com esse atributo, o padding não influencia no tamanho da caixa:*/
 	box-sizing: border-box;
@@ -152,14 +152,14 @@ footer
 {
 	background: url('/src/img/central.png') no-repeat;
 	background-size: contain;
-	background-position: center;	
+	background-position: center;
 }
 /* Marca-texto do disk */
 #marca-texto3
 {
 	background: url('/src/img/disk.png') no-repeat;
 	background-size: contain;
-	background-position: center;	
+	background-position: center;
 }
 
 
@@ -260,7 +260,7 @@ a:visited
 }
 
 /* Link da página atual sublinhado na navbar */
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover
+.navbar-default .navbar-nav>li>.active, .navbar-default .navbar-nav>li>.active:focus, .navbar-default .navbar-nav>li>.active:hover
 {
 	color: #380012;
 	background: none;
@@ -392,10 +392,10 @@ a:visited
 	/* TIPOGRAFIA: tive que diminuir alguns tamanhos e adicionar alguns paddings por questões de visualização */
 	.font_nav
 	{
-		padding-left: 1vw;	
+		padding-left: 1vw;
 		padding-right: 3.8vw;
 		font-size: 15px;
-	}	
+	}
 }
 
 /* lg */
@@ -411,7 +411,7 @@ a:visited
 	#botao-enviar
 	{
 		margin-left: -0.4vw;
-	}	
+	}
 
 	/* TIPOGRAFIA: tive que diminuir alguns tamanhos e adicionar alguns paddings por questões de visualização */
 	.font_nav
