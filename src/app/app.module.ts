@@ -17,6 +17,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { PrivacidadeComponent } from './privacidade/privacidade.component';
 import { InformacaoComponent } from './informacao/informacao.component';
 import { FooterComponent } from './footer/footer.component';
+import { ConfimationDialogComponent } from './confimation-dialog/confimation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { FooterComponent } from './footer/footer.component';
     ScrollableDirective,
     PrivacidadeComponent,
     InformacaoComponent,
-    FooterComponent
+    FooterComponent,
+    ConfimationDialogComponent
   ],
   imports: [
     BrowserModule,
