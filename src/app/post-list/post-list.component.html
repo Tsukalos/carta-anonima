@@ -1,7 +1,9 @@
 <!-- Conteúdo Relatos -->
 <section id="primeiro_conteudo">
 
-  <div class="container" style="overflow-y:scroll; height: 100%" appScrollable (scrollPosition)="scrollHandler($event)">
+  <div class="container" style="height: 100%" appScrollable (scrollPosition)="scrollHandler($event)">
+
+    <div class="row">
 
       <div *ngFor="let item of page.data | async" class="relato col-sm-5 col-sm-offset-1">
 
@@ -27,6 +29,24 @@
 
       </div>
 
+    </div> <!--coluna de relatos-->
+
+      <div class="row">
+
+        <!--Botao Carregar mais-->
+        <div class="visible-md-block visible-lg-block text-center">
+          <button type="submit" id="botao-enviar">
+            Ver Mais
+          </button>
+        </div>
+
+        <div class="visible-sm-block visible-xs-block text-center">
+          <button type="submit" id="botao-enviar">
+            Ver Mais
+          </button>
+        </div>
+
+      </div> <!--coluna do botão-->
 
   </div> <!--/container primeiro conteudo-->
 

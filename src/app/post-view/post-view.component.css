@@ -1,3 +1,10 @@
-#texto-relato p {
+/*Quebrar linha e não permitindo mais de um espaçamento*/
+#texto-relato p
+{
     white-space: pre-line;
+}
+/*cursor de click na denuncia*/
+#report
+{
+  cursor: pointer;
 }
