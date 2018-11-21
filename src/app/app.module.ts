@@ -16,6 +16,7 @@ import { PaginationService } from './pagination.service';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { PrivacidadeComponent } from './privacidade/privacidade.component';
 import { InformacaoComponent } from './informacao/informacao.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { InformacaoComponent } from './informacao/informacao.component';
     PostViewComponent,
     ScrollableDirective,
     PrivacidadeComponent,
-    InformacaoComponent
+    InformacaoComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
