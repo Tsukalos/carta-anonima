@@ -6,7 +6,7 @@
         <div class="navbar-header">
             
             <!-- Botão Alternar -->
-            <button type="button" class="navbar-toggle collapsed navbar-right" data-toggle="collapse" data-target="#barra-navegacao" aria-expanded="false">
+            <button #toggler type="button" class="navbar-toggle collapsed navbar-right" data-toggle="collapse" data-target="#barra-navegacao" aria-expanded="false">
                 <span class="sr-only">Alternar navegação</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -23,27 +23,27 @@
         <div class="collapse navbar-collapse" id="barra-navegacao">
             <ul class="nav navbar-nav text-center">
                 <li class="font_nav">
-                    <a routerLink="/home" routerLinkActive="active">
+                    <a routerLink="/home" routerLinkActive="active" (click)="collapseNavbar()">
                         Home
                     </a>
                 </li>
                 <li class="font_nav">
-                    <a routerLink="/all" routerLinkActive="active">
+                    <a routerLink="/all" routerLinkActive="active" (click)="collapseNavbar()">
                         Relatos
                     </a>
                 </li>
                 <li class="font_nav">
-                    <a routerLink="/write" routerLinkActive="active">
+                    <a routerLink="/write" routerLinkActive="active" (click)="collapseNavbar()">
                         Escreva seu relato
                     </a>
                 </li>
                 <li class="font_nav">
-                    <a routerLink="/information" routerLinkActive="active">
+                    <a routerLink="/information" routerLinkActive="active" (click)="collapseNavbar()">
                         Informações
                     </a>
                 </li>
                 <li class="font_nav">
-                    <a routerLink="/privacy" routerLinkActive="active">
+                    <a routerLink="/privacy" routerLinkActive="active" (click)="collapseNavbar()">
                         Privacidade
                     </a>
                 </li>					

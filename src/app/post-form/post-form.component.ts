@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class PostFormComponent implements OnInit {
   fields: { author: string, text: string, date: Date, title: string, reports: number };
   colleciton: AngularFirestoreCollection;
-  constructor(db: AngularFirestore, private route: Router) {
+  constructor(public db: AngularFirestore, private route: Router) {
     this.fields = { author: '', text: '', date: null, title: '', reports: 0 };
     this.colleciton = db.collection('posts');
   }
@@ -27,8 +27,9 @@ export class PostFormComponent implements OnInit {
 
   send(): void {
     this.fields.date = new Date();
-    this.colleciton.add(this.fields);
-    this.route.navigate(['/all']);
+    const doc = this.colleciton.doc(this.db.createId());
+    const d = doc.set(this.fields);
+    this.route.navigate(['/r/' + doc.ref.id]);
   }
 
 }
