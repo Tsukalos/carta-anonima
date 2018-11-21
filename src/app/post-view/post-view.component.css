@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 
 #texto-relato p {
+=======
+/*Quebrar linha e não permitindo mais de um espaçamento*/
+#texto-relato p
+{
+>>>>>>> e4f45b3386b5efe94e9d8aad266e60f3e44d1e04
     white-space: pre-line;
+}
+/*cursor de click na denuncia*/
+#report
+{
+  cursor: pointer;
 }
