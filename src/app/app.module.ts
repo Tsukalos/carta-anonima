@@ -18,6 +18,8 @@ import { PrivacidadeComponent } from './privacidade/privacidade.component';
 import { InformacaoComponent } from './informacao/informacao.component';
 import { FooterComponent } from './footer/footer.component';
 import { ConfimationDialogComponent } from './confimation-dialog/confimation-dialog.component';
+import { MatDialogModule, MatButtonModule } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { ConfimationDialogComponent } from './confimation-dialog/confimation-dia
     PrivacidadeComponent,
     InformacaoComponent,
     FooterComponent,
-    ConfimationDialogComponent
+    ConfimationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,9 +41,13 @@ import { ConfimationDialogComponent } from './confimation-dialog/confimation-dia
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    MatDialogModule,
+    MatButtonModule,
+    BrowserAnimationsModule
   ],
   providers: [PaginationService],
+  entryComponents: [ConfimationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

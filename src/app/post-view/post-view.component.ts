@@ -1,8 +1,10 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map, take } from 'rxjs/operators';
+import { ConfimationDialogComponent } from '../confimation-dialog/confimation-dialog.component';
 export interface Post {
   author: string;
   text: string;
@@ -19,7 +21,7 @@ export class PostViewComponent implements OnInit {
   currentId: string;
   info: Observable<Post>;
   collection: AngularFirestoreCollection<Post>;
-  constructor(private route: ActivatedRoute, db: AngularFirestore) {
+  constructor(private route: ActivatedRoute, db: AngularFirestore, public dialog: MatDialog) {
     this.collection = db.collection<Post>('posts');
 
   }
@@ -29,6 +31,22 @@ export class PostViewComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.currentId = id;
     this.info = this.collection.doc<Post>('/' + id).valueChanges();
+  }
+
+  reportDialog() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.closeOnNavigation = true;
+    dialogConfig.data = {
+      id: 1,
+      title: 'Confirmação',
+      text: 'Deseja reportar esse relato?'
+    };
+    const dialogRef = this.dialog.open(ConfimationDialogComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(result);
+    });
   }
 
   reportButton(): void {
