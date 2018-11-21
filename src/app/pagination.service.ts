@@ -67,6 +67,7 @@ export class PaginationService {
       return ref
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
         .limit(this.query.limit)
+        .where('reports', '<', '5')
         .startAfter(cursor);
     });
     this.mapAndUpdate(more);
