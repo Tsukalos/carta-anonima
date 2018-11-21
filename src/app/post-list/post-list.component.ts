@@ -18,12 +18,6 @@ export class PostListComponent implements OnInit {
     this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 6 });
   }
 
-  scrollHandler(e) {
-    if (e === 'bottom') {
-      this.page.more();
-    }
-  }
-
   buttonHandler() {
     this.page.more();
   }

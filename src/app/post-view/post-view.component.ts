@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map, take } from 'rxjs/operators';
@@ -21,7 +21,7 @@ export class PostViewComponent implements OnInit {
   currentId: string;
   info: Observable<Post>;
   collection: AngularFirestoreCollection<Post>;
-  constructor(private route: ActivatedRoute, db: AngularFirestore, public dialog: MatDialog) {
+  constructor(private route: ActivatedRoute, db: AngularFirestore, public dialog: MatDialog, public routing: Router) {
     this.collection = db.collection<Post>('posts');
 
   }
@@ -45,7 +45,9 @@ export class PostViewComponent implements OnInit {
     };
     const dialogRef = this.dialog.open(ConfimationDialogComponent, dialogConfig);
     dialogRef.afterClosed().subscribe(result => {
-      console.log(result);
+      if (result === true) {
+        this.reportButton();
+      }
     });
   }
 
@@ -53,6 +55,7 @@ export class PostViewComponent implements OnInit {
     const d = this.collection.doc<Post>('/' + this.currentId).snapshotChanges().pipe(map(arr => {
       this.collection.doc<Post>('/' + this.currentId).update({ reports: arr.payload.data().reports + 1 });
     }), take(1)).toPromise();
+    this.routing.navigate(['/all']);
   }
 
 }

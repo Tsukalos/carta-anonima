@@ -1,7 +1,7 @@
 <!-- Conteúdo Relatos -->
 <section id="primeiro_conteudo">
 
-  <div class="container" style="height: 100%" appScrollable (scrollPosition)="scrollHandler($event)">
+  <div class="container" style="height: 100%">
 
     <div class="row">
 
@@ -35,13 +35,13 @@
 
         <!--Botao Carregar mais-->
         <div class="visible-md-block visible-lg-block text-center">
-          <button type="btn" id="botao-more">
+          <button type="btn" id="botao-more" (click)="buttonHandler()">
             Ver Mais
           </button>
         </div>
 
         <div class="visible-sm-block visible-xs-block text-center">
-          <button type="btn" id="botao-more">
+          <button type="btn" id="botao-more" (click)="buttonHandler()">
             Ver Mais
           </button>
         </div>
