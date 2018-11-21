@@ -13,7 +13,9 @@ export class HeaderComponent implements OnInit {
   }
 
   collapseNavbar() {
-    this.toggle.nativeElement.click();
+    if(this.toggle.nativeElement.offsetParent !== null){
+      this.toggle.nativeElement.click();
+    }
   }
 
 }
