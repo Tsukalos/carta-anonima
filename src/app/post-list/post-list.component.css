@@ -1,0 +1,20 @@
+#botao-more
+{
+	background-color: #53222e;
+	color: #f0deb9;
+	font-weight: bold;
+	border-radius: 8px;		/*Bordas arredondadas:*/
+	-webkit-border-radius:8px;	/*Para funcionar em versões anteriores do chrome e safari: */
+	-moz-border-radius:8	px; 	/*Para funcionar em versões anteriores do mozilla: */
+	/*Com esse atributo, o padding não influencia no tamanho da caixa:*/
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box; /*(Chrome e safari)*/
+	-moz-box-sizing: border-box; /*(mozilla)*/
+	border-color: transparent;
+}
+
+#botao-more:active
+{
+  background-color: #852940;
+  border-color: transparent;
+}
