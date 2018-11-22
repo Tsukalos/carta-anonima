@@ -23,7 +23,6 @@ export class PaginationService {
   private query: QueryConfig;
 
   // Observable data
-  d: boolean;
   data: Observable<any>;
   done: Observable<boolean> = this._done.asObservable();
   loading: Observable<boolean> = this._loading.asObservable();
@@ -42,14 +41,10 @@ export class PaginationService {
       prepend: false,
       ...opts
     };
-    this.d = false;
     this._data = new BehaviorSubject([]);
-    this._done = new BehaviorSubject(false);
 
     const first = this.afs.collection(this.query.path, ref => {
       return ref
-        .orderBy('reports', 'desc')
-        .where('reports', '<=', 5)
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
         .limit(this.query.limit);
     });
@@ -67,10 +62,9 @@ export class PaginationService {
   // Retrieves additional data from firestore
   more() {
     const cursor = this.getCursor();
+
     const more = this.afs.collection(this.query.path, ref => {
       return ref
-        .orderBy('reports', 'desc')
-        .where('reports', '<=', 5)
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
         .limit(this.query.limit)
         .startAfter(cursor);
@@ -85,7 +79,6 @@ export class PaginationService {
     if (current.length) {
       return this.query.prepend ? current[0].doc : current[current.length - 1].doc;
     }
-    this.d = true;
     return null;
   }
 
@@ -114,9 +107,9 @@ export class PaginationService {
         // update source with new values, done loading
         this._data.next(values);
         this._loading.next(false);
+
         // no more values, mark done
         if (!values.length) {
-          this.d = true;
           this._done.next(true);
         }
       })

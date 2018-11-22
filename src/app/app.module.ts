@@ -17,9 +17,6 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { PrivacidadeComponent } from './privacidade/privacidade.component';
 import { InformacaoComponent } from './informacao/informacao.component';
 import { FooterComponent } from './footer/footer.component';
-import { ConfimationDialogComponent } from './confimation-dialog/confimation-dialog.component';
-import { MatDialogModule, MatButtonModule } from '@angular/material';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -32,8 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ScrollableDirective,
     PrivacidadeComponent,
     InformacaoComponent,
-    FooterComponent,
-    ConfimationDialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -41,13 +37,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AppRoutingModule,
-    FormsModule,
-    MatDialogModule,
-    MatButtonModule,
-    BrowserAnimationsModule
+    FormsModule
   ],
   providers: [PaginationService],
-  entryComponents: [ConfimationDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
