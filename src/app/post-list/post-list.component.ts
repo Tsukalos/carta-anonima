@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { PaginationService } from '../pagination.service';
 
 @Component({
@@ -16,13 +15,7 @@ export class PostListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 6 });
-  }
-
-  scrollHandler(e) {
-    if (e === 'bottom') {
-      this.page.more();
-    }
+    this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 2 });
   }
 
   buttonHandler() {
