@@ -15,7 +15,7 @@ export class PostListComponent implements OnInit {
 
 
   ngOnInit() {
-    this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 6 });
+    this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 2 });
   }
 
   buttonHandler() {

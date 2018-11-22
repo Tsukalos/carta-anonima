@@ -14,10 +14,10 @@
           </span>
 
           <span id="relato-demo" class="justif">
-          <p>
-            {{ (item.text.length>30)? (item.text | slice:0:30)+'...':(item.text) }}
-            <br><b>Leia mais...</b>
-          </p>
+            <p>
+              {{ (item.text.length>30)? (item.text | slice:0:30)+'...':(item.text) }}
+              <br><b>Leia mais...</b>
+            </p>
           </span>
 
 
@@ -29,25 +29,29 @@
 
       </div>
 
-    </div> <!--coluna de relatos-->
+    </div>
+    <!--coluna de relatos-->
 
-      <div class="row">
+    <div *ngIf="!page.d; else nomore" class="row">
 
-        <!--Botao Carregar mais-->
-        <div class="visible-md-block visible-lg-block text-center">
-          <button type="btn" id="botao-more" (click)="buttonHandler()">
-            Ver Mais
-          </button>
-        </div>
+      <!--Botao Carregar mais-->
+      <div class="visible-md-block visible-lg-block text-center">
+        <button type="btn" id="botao-more" (click)="buttonHandler()">
+          Ver Mais
+        </button>
+      </div>
 
-        <div class="visible-sm-block visible-xs-block text-center">
-          <button type="btn" id="botao-more" (click)="buttonHandler()">
-            Ver Mais
-          </button>
-        </div>
+      <div class="visible-sm-block visible-xs-block text-center">
+        <button type="btn" id="botao-more" (click)="buttonHandler()">
+          Ver Mais
+        </button>
+      </div>
 
-      </div> <!--coluna do botão-->
+    </div>
+    <div class="row"><ng-template #nomore><p>Fim dos relatos...</p></ng-template></div>
+    <!--coluna do botão-->
 
-  </div> <!--/container primeiro conteudo-->
+  </div>
+  <!--/container primeiro conteudo-->
 
 </section>
