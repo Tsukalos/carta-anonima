@@ -49,8 +49,8 @@ export class PaginationService {
     const first = this.afs.collection(this.query.path, ref => {
       return ref
         .orderBy('reports', 'desc')
-        .where('reports', '<=', 5)
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
+        .where('reports', '<=', 5)
         .limit(this.query.limit);
     });
 
@@ -70,8 +70,8 @@ export class PaginationService {
     const more = this.afs.collection(this.query.path, ref => {
       return ref
         .orderBy('reports', 'desc')
-        .where('reports', '<=', 5)
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
+        .where('reports', '<=', 5)
         .limit(this.query.limit)
         .startAfter(cursor);
     });
@@ -119,7 +119,7 @@ export class PaginationService {
           this.d = true;
           this._done.next(true);
         }
-      })
+      }), take(1)
       )
       .subscribe();
 

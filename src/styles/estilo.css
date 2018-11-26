@@ -7,7 +7,7 @@
 /* ========== LAYOUT ========== */
 
 /* ===== GERAL ===== */
-
+@import '~@angular/cdk/overlay-prebuilt.css';
 body
 {
 	background: url('/src/img//bg.jpg') repeat;

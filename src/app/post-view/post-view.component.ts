@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { map, take } from 'rxjs/operators';
 import { ConfimationDialogComponent } from '../confimation-dialog/confimation-dialog.component';
+import { ScrollStrategyOptions, BlockScrollStrategy } from '@angular/cdk/overlay';
 export interface Post {
   author: string;
   text: string;
@@ -38,6 +39,7 @@ export class PostViewComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.closeOnNavigation = true;
+    dialogConfig.hasBackdrop = true;
     dialogConfig.data = {
       id: 1,
       title: 'Confirmação',
@@ -57,5 +59,4 @@ export class PostViewComponent implements OnInit {
     }), take(1)).toPromise();
     this.routing.navigate(['/all']);
   }
-
 }

@@ -11,10 +11,12 @@ import { PaginationService } from '../pagination.service';
 
 export class PostListComponent implements OnInit {
   constructor(public page: PaginationService) {
+    console.log('const');
   }
 
 
   ngOnInit() {
+    console.log('init');
     this.page.init('posts', 'date', { reverse: true, prepend: false, limit: 2 });
   }
 
