@@ -69,13 +69,13 @@
         <div class="form-group">
 
           <div class="col-md-offset-10 visible-md-block visible-lg-block">
-              <button type="submit" id="botao-enviar" [disabled]="!enableButton()" (click)="send()">
+              <button type="submit" id="botao-enviar" [disabled]="!enableButton()" (click)="confirmationDialog()">
                 Enviar
               </button>
           </div>
 
           <div class="pull-right visible-sm-block visible-xs-block col-md-10">
-            <button type="submit" id="botao-enviar" [disabled]="!enableButton()" (click)="send()">
+            <button type="submit" id="botao-enviar" [disabled]="!enableButton()" (click)="confirmationDialog()">
               Enviar
             </button>
           </div>
