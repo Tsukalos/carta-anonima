@@ -27,6 +27,7 @@ export class PostFormComponent implements OnInit {
 
   send(): void {
     this.fields.date = new Date();
+    // this.fields.text = this.fields.text.replace(/\r?\n/g, '<br>');
     const doc = this.colleciton.doc(this.db.createId());
     const d = doc.set(this.fields);
     this.route.navigate(['/r/' + doc.ref.id]);
