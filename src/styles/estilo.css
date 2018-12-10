@@ -40,7 +40,7 @@ body
 /* Ajuste de posição da logo carta */
 .navbar-brand
 {
-	padding: 0px 5px 10px 30px;
+	padding: 0px 2.5vw 10px 4vw;
 	position: relative;
 }
 
@@ -343,8 +343,10 @@ a:visited
 	{
 		border: none;
 		padding: 15px 5px 40px 5px;
-		background: url('/src/img/top_menu.png') no-repeat;
-		background-size: 1366px 1340%;
+    background: url('/src/img/top_menu.png') no-repeat;
+    background-size: 1920px 1430px;
+    width: 100%;
+    position: absolute;
 		background-color: transparent;
 	}
 
