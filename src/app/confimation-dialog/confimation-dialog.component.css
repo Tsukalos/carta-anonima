@@ -1,3 +1,25 @@
-#mat-dialog-0 {
-  background-color: black !important;
+.back-modal{
+  display: block;
+	background: url('/src/img/confirmation-stick.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+h2{
+  font-size: 25px;
+  text-align: center;
+}
+
+.botao{
+  display: inline-block;
+  background: none;
+  float: right;
+}
+
+.texto-confirmacao{
+  padding: 20px 20px 35px 20px;
+  text-align: center;
 }
