@@ -37,7 +37,7 @@
           </label>
 
           <div class="col-md-7">
-            <input [(ngModel)]="fields.title" type="text" class="form-control" id="input-titulo" name="title">
+            <input [(ngModel)]="fields.title" type="text" class="form-control" id="input-titulo" name="title" required>
           </div>
 
         </div> <!--/form-group titulo-->
@@ -61,7 +61,7 @@
           </label>
 
           <div class="col-md-7">
-            <textarea [(ngModel)]="fields.text" class="form-control" rows="8" id="input-relato" name="text"></textarea>
+            <textarea [(ngModel)]="fields.text" class="form-control" rows="8" id="input-relato" name="text" required></textarea>
           </div>
 
         </div> <!--/form-group relato-->
