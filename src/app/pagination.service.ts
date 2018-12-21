@@ -3,6 +3,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/fire
 import { BehaviorSubject } from 'rxjs';
 import { Observable } from 'rxjs';
 import { map, scan, take } from 'rxjs/operators';
+import * as firebase from 'firebase';
 
 export interface QueryConfig {
   path: string; //  path to collection
@@ -48,9 +49,8 @@ export class PaginationService {
 
     const first = this.afs.collection(this.query.path, ref => {
       return ref
-        .orderBy('reports', 'desc')
+        .where('reports', '==', 0)
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
-        .where('reports', '<=', 5)
         .limit(this.query.limit);
     });
 
@@ -69,9 +69,8 @@ export class PaginationService {
     const cursor = this.getCursor();
     const more = this.afs.collection(this.query.path, ref => {
       return ref
-        .orderBy('reports', 'desc')
         .orderBy(this.query.field, this.query.reverse ? 'desc' : 'asc')
-        .where('reports', '<=', 5)
+        .where('reports', '==', 0)
         .limit(this.query.limit)
         .startAfter(cursor);
     });

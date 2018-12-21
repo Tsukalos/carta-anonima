@@ -57,6 +57,6 @@ export class PostViewComponent implements OnInit {
     const d = this.collection.doc<Post>('/' + this.currentId).snapshotChanges().pipe(map(arr => {
       this.collection.doc<Post>('/' + this.currentId).update({ reports: arr.payload.data().reports + 1 });
     }), take(1)).toPromise();
-    this.routing.navigate(['/all']);
+    this.routing.navigate(['/home']);
   }
 }
