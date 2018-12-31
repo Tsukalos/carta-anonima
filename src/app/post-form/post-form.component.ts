@@ -50,6 +50,12 @@ export class PostFormComponent implements OnInit {
 
   send(): void {
     this.fields.date = new Date();
+    if(this.fields.title === '') {
+      this.fields.title = '(Sem título)';
+    }
+    if(this.fields.author === '') {
+      this.fields.author = 'Anônimo';
+    }
     // this.fields.text = this.fields.text.replace(/\r?\n/g, '<br>');
     const doc = this.colleciton.doc(this.db.createId());
     const d = doc.set(this.fields);
