@@ -20,6 +20,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ConfimationDialogComponent } from './confimation-dialog/confimation-dialog.component';
 import { MatDialogModule, MatButtonModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     BrowserAnimationsModule
   ],
-  providers: [PaginationService],
+  providers: [PaginationService , { provide: LocationStrategy, useClass: HashLocationStrategy }],
   entryComponents: [ConfimationDialogComponent],
   bootstrap: [AppComponent]
 })

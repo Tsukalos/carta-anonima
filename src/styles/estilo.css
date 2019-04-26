@@ -10,7 +10,7 @@
 @import '~@angular/cdk/overlay-prebuilt.css';
 body
 {
-	background: url('/src/img//bg.jpg') repeat;
+	background: url('../img//bg.jpg') repeat;
 	background-size: 100% 1086vh;
 	font-family: "Courier Std","Courier New", Courier, monospace;
 	color: #471824;
@@ -32,7 +32,7 @@ body
 	height: 60px;
 	width: 60px;
 	display: block;
-	background: url('/src/img/favicon.png') no-repeat;
+	background: url('../img/favicon.png') no-repeat;
 	background-size: contain;
 	color: transparent;
 }
@@ -77,7 +77,7 @@ body
 	width: 360px;
 	height: 260px;
 	display: block;
-	background: url('/src/img/logo_home.png') no-repeat;
+	background: url('../img/logo_home.png') no-repeat;
 	background-size: contain;
 	color: transparent;
 }
@@ -143,21 +143,21 @@ footer
 /* Marca-texto da policia */
 #marca-texto1
 {
-	background: url('/src/img/policia.png') no-repeat;
+	background: url('../img/policia.png') no-repeat;
 	background-size: contain;
 	background-position: center;
 }
 /* Marca-texto da central */
 #marca-texto2
 {
-	background: url('/src/img/central.png') no-repeat;
+	background: url('../img/central.png') no-repeat;
 	background-size: contain;
 	background-position: center;
 }
 /* Marca-texto do disk */
 #marca-texto3
 {
-	background: url('/src/img/disk.png') no-repeat;
+	background: url('../img/disk.png') no-repeat;
 	background-size: contain;
 	background-position: center;
 }
@@ -342,7 +342,7 @@ a:visited
 	{
 		border: none;
 		padding: 15px 5px 40px 5px;
-    background: url('/src/img/top_menu.png') no-repeat;
+    background: url('../img/top_menu.png') no-repeat;
     background-size: 1920px 1430px;
     width: 100%;
     position: absolute;
